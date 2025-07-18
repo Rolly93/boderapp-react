@@ -1,3 +1,4 @@
+import DashBoard from './pages/DashBoard'
 import LoginForm from './pages/LoginForm' 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-  <LoginForm/>
+  <DashBoard/>
   </>
   )
 }
