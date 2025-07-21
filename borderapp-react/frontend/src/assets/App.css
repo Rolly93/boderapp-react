@@ -29,6 +29,18 @@ body {
     left: -80px;
     top: -80px;
 }
+
+table *{
+  border: red 3px solid;
+  text-align: center;
+  padding: 4px;
+}
+
+table , th, td {
+  border-collapse:collapse;
+
+}
+
 .shape:last-child{
     background: linear-gradient(
         to right,

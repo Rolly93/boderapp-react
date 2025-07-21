@@ -4,11 +4,11 @@ function App() {
 
   return (    
   <>
-      <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-  <DashBoard/>
+  <div>
+
+    
+<DashBoard/>
+  </div>
   </>
   )
 }
