@@ -1,40 +1,46 @@
-// import 'xmlbuilder2'        
-// export class xmlFile{
+import {create} from 'xmlbuilder2'
+import { create } from 'xmlbuilder2';
+export class xmlFile{
 
-//     constructor(referencia , evento , dayTime,scac,comentarios , tipoOperacion) {
-//         const date = new Date();
-//         this.referencia = referencia;
-//         this.evento = evento;
-//         this.dayTime = dayTime;
-//         this.scac = scac;
-//         this.comentarios = comentarios;
-//         this.tipoOperacion=tipoOperacion;
+    constructor() {
+        this.referencia = referencia;
+        this.evento = evento;
+        this.dateTime = dateTime;
+        this.scac = scac;
+        this.comentarios = comentarios;
+        this.tipoOperacion=tipoOperacion;
+         this.nowTimeFormat = fulldateTime();
+        function CreateFile(){
+            const fileXml = create({encoding:'UTF-8'}, '<root><node/></root>');
+            console.log(fileXml.end({prettyPrint:true}))
 
-//         function CreateFile(referencia,evento,dayTime,comentarios,tipoOperacion){
+        }
 
-//         }
-//     }
-// }
+    }
+}
 
-
-
-
-
-fulldateTime()
-
+//formato dar el nombre al archivo XML con la siguiente estructura en el timepo yymmddThhmmss
 function fulldateTime (){
-    const date = new Date()
 
-const month = date.getMonth();
-console.log(month)
-const day = date.getDate();
-const year = date.getFullYear();
-const hour =date.getHours();
-const minutes = date.getMinutes();
-const seconds = date.getSeconds();
-const formatTime = `${year}-${month}-${day}T${hour}:${minutes}:${seconds}`
+const date = new Date();
+const usFormatter = new Intl.DateTimeFormat('en-US',{day:'2-digit' , month:'2-digit',year:"numeric"});
+const timeFormatter = new Intl.DateTimeFormat('en-US',{
+    hour: '2-digit',
+    minute:'2-digit',
+    second:'2-digit',
+    hour12:false,
+    timeZone:'America/Mexico_City'
+});
+//const formatTime = `${year}-${month}-${day}T${hour}:${minutes}:${seconds}`
+//format date mm/dd/yy
+var today = usFormatter.format(date).toString().split("/")
+//format time HH:MM:SS
+const time = timeFormatter.format(date).toString().split(":")
+console.log(time)
 
-return formatTime;
+const formatdate = `${today[2]}${today[0]}${today[1]}T${time[0]}${time[1]}${time[2]}`;
+
+return formatdate;
 
 }
 export {fulldateTime};

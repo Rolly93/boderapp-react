@@ -1,0 +1,7 @@
+<AvisoEventos ReferenciaExpd="92b1281244" 
+TipoOperacion="2" 
+CodigoTransportista="sbcv" 
+ReferenciaTransportista="92b1281244" 
+CodigoEvento="AFS" 
+FechaHoraEvento="2025-06-18T13:34:00" 
+Comentarios="Llegando a Patio Origen"/>
